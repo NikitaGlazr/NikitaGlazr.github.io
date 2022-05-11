@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;  /*определяет как вычисляется общая ширина и высота элемента.*/
+}
+
+body {
+    background: linear-gradient(to top left, #b0e0e6, #ffdbe1);
+    padding: 20px;
+    font-family: Arial;
+}
+
+section {
+    max-width: 1050px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 55px;
+    word-break: break-all; /*определяет, где будет установлен перевод на новую строку в случае превышения текстом границ блока.*/
+    padding-top: 30px;
+}
+h3 {
+    text-align: center;  
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+.elem {
+    margin-left:38%;
+    margin-top: 15px;
+    padding: 5px 50px;
+    background-color: #e3f2fc;
+     color: #000000; 
+     border:4px inset #8f8f8f; 
+}
+
+.column {
+    padding: 8px;
+    font-family: 'EB Garamond', serif;
+    float: right;
+    width: 50%;
+    height: 100%;
+    font-size: 16px; 
+}
+.content {
+    padding: 10px;
+    height: 100%;  
+}
+
+img {
+  width: 100%;
+  display: block;
+  margin: 0px auto;
+  width: 95%;
+  max-height: 60%;
+}
+
+.image {
+    width: 90%;
+    display: block; /* Блочный элемент (для старых браузеров) */
+    margin: 0 auto;
+    height: 500px;
+}
+/*_________________________________________________________________________*/
+/*content-color*/
+.content {
+    background-image:  radial-gradient(circle at 56.16% 120.44%, #cae7e3 0, #c9e7e5 7.14%, #c9e7e8 14.29%, #c9e7ea 21.43%, #c9e7ed 28.57%, #cae6ef 35.71%, #cbe6f0 42.86%, #cde5f2 50%, #cfe4f3 57.14%, #d2e4f4 64.29%, #d4e3f5 71.43%, #d7e2f5 78.57%, #dae1f5 85.71%, #dde0f4 92.86%, #e1dff3 100%);
+}
+
+
+/*_________________________________________________________________________*/
+/*Liner*/
+.slider {
+    margin-top: 30px;
+}
+
+.slider__iteam {
+   width: 75%;
+   font-size: 18px;
+   color: #000000;
+   padding: 20px 0px;
+   opacity: .7;
+   border-top: 10px solid #000000;
+   position: relative;
+}
+
+.slider__iteam.active {
+    opacity: 1;
+}
+.slider__iteam.active::before {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 10px;
+    background-color:  rgb(255, 0, 0);
+    position: absolute; /*указывает, как элемент позиционируется в документе. top, right, bottom и left (en-US) определяют конечное местоположение позиционированных элементов.*/
+    top: -10px;
+    left: 0;
+    z-index: 1;
+}
+/*_________________________________________________________________________*/
+/*nav*/
+nav {
+    font-size: 20px;
+    text-transform: uppercase; /*Управляет преобразованием текста элемента в заглавные или прописные символы. Когда значение отлично от none, регистр исходного текста будет изменен.*/
+    font-family: 'Kaushan Script', cursive;
+}
+
+.nav__link {
+    display: inline-block;
+    margin: -3px 13px;
+    position: relative;
+
+    color: #000000;
+    text-decoration: none;
+
+    transition: linear;
+}
+.nav__link::after {
+    content: "";    
+    height: 3px;
+    display: none; /*Свойство display имеет много разных значений. Обычно, используются только три из них:
+     none, inline и block, потому что когда-то браузеры другие не поддерживали.*/
+    background-color:rgb(133, 0, 0);
+}
+
+.nav__link:hover::after {
+    display: block;
+}
+/*_________________________________________________________________________*/
+/*header*/
+header {
+    width: 100%;
+    padding-top: 20px;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 1000;
+}
+.header__logo {
+    font-size: 32px;
+    color: rgb(0, 0, 0);
+    padding-left: 50px;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*_________________________________________________________________________*/
+/*footer*/
+.footer {
+    font-size: 18px;
+}
+.rounded {
+        padding:0;
+        list-style: none;
+        font-size: 18px;
+    }
+    .rounded li{
+        padding:6px;
+    }
+    .rounded li:before {
+        padding-right: 15px;
+        font-weight: bold;
+        color: #C0C0C0 ;
+        content: "\058E";
+        transition-duration: 0.5s; /*определяет продолжительность выполнения анимации. Значение по умолчанию равняется 0s, т.е. отсутствие анимации.*/
+    }
+    .rounded li:hover:before {
+        color: #ff0000;
+    }    
+/*-----------------------------------------------------------------------*/
+
+/*up_button*/
+.back_to_top {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    z-index: 9999;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #000000 ;
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
+    display: none;
+  }
+  
+  .back_to_top:hover {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+  }
+  
+  .back_to_top-show {
+    display: block;
+  }
+/*--------------------------------------------*/
+
+    /*display: flex; это сокращённое свойство, определяющее способность гибкого элемента растягиваться или сжиматься для заполнения собой доступного свободного пространства. Это свойство устанавливает flex-grow, flex-shrink и flex-basis.*/
+    /*justify-content: space-between; свойство  justify-content определяет, как браузер распределяет пространство между и вокруг элементов контента вдоль главной оси flex контейнера, или вдоль строчной оси grid контейнера.*/
+
+    @media (max-width: 780px) {
+.column {width: 100%; }
+.elem {margin-left: 30%;}
+}
+@media (max-width: 550px) {
+    .elem {margin-left: 20%;}
+}
+@media (max-width: 400px) {
+    .elem {margin-left: 0%;}
+}
