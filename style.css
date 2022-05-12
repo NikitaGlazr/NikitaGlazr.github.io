@@ -173,7 +173,6 @@ header {
     }
     .rounded li:before {
         padding-right: 15px;
-        font-weight: bold;
         color: #C0C0C0 ;
         content: "\058E";
         transition-duration: 0.5s; /*определяет продолжительность выполнения анимации. Значение по умолчанию равняется 0s, т.е. отсутствие анимации.*/
